@@ -1,1 +1,39 @@
 
+[
+    {
+        "id": 1,
+        "title": "تفسير السعدي",
+        "price": 15000.00,
+        "image": "https://placehold.co/300x200/060685/ffffff?text=%D8%AA%D9%81%D8%B3%D9%8A%D8%B1+%D8%A7%D9%84%D8%B3%D8%B9%D8%AF%D9%8A"
+    },
+    {
+        "id": 2,
+        "title": "رياض الصالحين",
+        "price": 8500.50,
+        "image": "https://placehold.co/300x200/f3cf0c/000000?text=%D8%B1%D9%8A%D8%A7%D8%B6+%D8%A7%D9%84%D8%B5%D8%A7%D9%84%D8%AD%D9%8A%D9%86"
+    },
+    {
+        "id": 3,
+        "title": "الأربعون النووية",
+        "price": 3000.00,
+        "image": "https://placehold.co/300x200/060685/ffffff?text=%D8%A7%D9%84%D8%A3%D8%B1%D8%A8%D9%88%D9%86+%D8%A7%D9%84%D9%86%D9%88%D9%88%D9%8A%D8%A9"
+    },
+    {
+        "id": 4,
+        "title": "صحيح البخاري (مختصر)",
+        "price": 25000.00,
+        "image": "https://placehold.co/300x200/f3cf0c/000000?text=%D8%B5%D8%AD%D9%8A%D8%AD+%D8%A7%D9%84%D8%A8%D8%AE%D8%A7%D8%B1%D9%8A"
+    },
+    {
+        "id": 5,
+        "title": "فقه السنة",
+        "price": 12000.00,
+        "image": "https://placehold.co/300x200/060685/ffffff?text=%D9%81%D9%82%D9%87+%D8%A7%D9%84%D8%B3%D9%86%D8%A9"
+    },
+    {
+        "id": 6,
+        "title": "لا تحزن",
+        "price": 7500.00,
+        "image": "https://placehold.co/300x200/f3cf0c/000000?text=%D9%84%D8%A7+%D8%AA%D8%AD%D8%B2%D9%86"
+    }
+]
