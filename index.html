@@ -127,29 +127,50 @@
             // !!! هام: استبدل الأرقام التالية بأرقام الواتساب الصحيحة لمدينتي بورتسودان وعطبرة
             // تأكد من تضمين رمز البلد (مثلاً 249 للسودان) وبدون علامة + أو أصفار بادئة
             const whatsappNumbers = {
-                portsudan: '249900079073', // استبدل XXXXXXXXX بالرقم الصحيح لبورتسودان
-                atbara: '249112009373'      // استبدل YYYYYYYYY بالرقم الصحيح لعطبرة
+                portsudan: '249XXXXXXXXX', // استبدل XXXXXXXXX بالرقم الصحيح لبورتسودان
+                atbara: '249YYYYYYYYY'      // استبدل YYYYYYYYY بالرقم الصحيح لعطبرة
             };
             // ----------------------
 
-            // --- تحميل بيانات الكتب من ملف JSON ---
-            let books = [];
-            fetch('books.json')  // يفترض وجود ملف books.json في نفس المجلد
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    books = data;
-                    displayBooks(); // استدعاء عرض الكتب بعد جلب البيانات
-                })
-                .catch(error => {
-                    console.error("خطأ في جلب بيانات الكتب:", error);
-                    // يمكنك هنا عرض رسالة خطأ للمستخدم
-                    bookList.innerHTML = '<p class="text-center text-red-500 col-span-full">حدث خطأ أثناء تحميل الكتب. الرجاء المحاولة لاحقاً.</p>';
-                });
+            // --- بيانات الكتب ---
+            const books = [
+              {
+                id: 1,
+                title: "كتاب 1",
+                price: 25.00,
+                image: "https://placehold.co/300x200/cccccc/ffffff?text=Book1",
+              },
+              {
+                id: 2,
+                title: "كتاب 2",
+                price: 30.00,
+                image: "https://placehold.co/300x200/eeeeee/aaaaaa?text=Book2",
+              },
+              {
+                id: 3,
+                title: "كتاب 3",
+                price: 15.50,
+                image: "https://placehold.co/300x200/cccccc/ffffff?text=Book3",
+              },
+              {
+                id: 4,
+                title: "كتاب 4",
+                price: 42.00,
+                image: "https://placehold.co/300x200/eeeeee/aaaaaa?text=Book4",
+              },
+              {
+                id: 5,
+                title: "كتاب 5",
+                price: 28.75,
+                image: "https://placehold.co/300x200/cccccc/ffffff?text=Book5",
+              },
+              {
+                id: 6,
+                title: "كتاب 6",
+                price: 33.30,
+                image: "https://placehold.co/300x200/eeeeee/aaaaaa?text=Book6",
+              },
+            ];
             // ------------------------
 
             // --- إدارة سلة التسوق ---
@@ -278,13 +299,11 @@
                     setTimeout(() => notification.remove(), 300);
                 }, 2000);
             }
-            // ------------------------
 
             // --- عرض الكتب في الصفحة ---
             function displayBooks() {
                 bookList.innerHTML = '';
                 if (!books || books.length === 0) {
-                    // تم تعديل الرسالة هنا
                     bookList.innerHTML = '<p class="text-center text-gray-500 col-span-full">لا توجد كتب لعرضها حالياً.</p>';
                     return;
                 }
@@ -376,6 +395,7 @@
 
             // --- البدء ---
             updateCartFromLocalStorage();
+            displayBooks();
             // ------------
         });
     </script>
