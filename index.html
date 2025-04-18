@@ -1,152 +1,383 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>روابط التواصل الاجتماعي الخاصة بي عمار ناصر </title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Book Bliss - متجر الكتب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* تطبيق خط Inter على كامل الصفحة */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* gray-100 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding-top: 2.5rem; /* py-10 */
-            padding-bottom: 2.5rem;
+            background-color: #ffffff; /* لون الخلفية */
         }
+        /* تخصيص ألوان Tailwind */
+        .bg-primary { background-color: #060685; }
+        .text-primary { color: #060685; }
+        .border-primary { border-color: #060685; }
+        .bg-secondary { background-color: #f3cf0c; }
+        .text-secondary { color: #f3cf0c; }
+        .hover\:bg-primary-dark:hover { background-color: #04045e; } /* لون أغمق للتمرير */
+        .hover\:bg-secondary-dark:hover { background-color: #d4b40a; } /* لون أغمق للتمرير */
 
-        .container {
-            background-color: #fff; /* bg-white */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-            padding: 2rem; /* p-8 */
-            max-width: 2xl; /* max-w-2xl */
+        /* إخفاء الأسهم في حقول الأرقام */
+        input[type='number']::-webkit-outer-spin-button,
+        input[type='number']::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+        /* التأكد من أن الصور لا تتجاوز الحاوية */
+        .book-image {
+            object-fit: cover; /* يضمن تغطية الصورة للمساحة المخصصة */
             width: 100%;
-        }
-
-        .profile-image-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem; /* mb-6 */
-        }
-
-        .profile-image {
-            border-radius: 9999px; /* rounded-full */
-            width: 8rem; /* w-32 */
-            height: 8rem; /* h-32 */
-            border-width: 4px; /* border-4 */
-            border-color: #edf2f7; /* border-gray-200 */
-            object-fit: cover;
-        }
-
-        .username-container {
-            text-align: center;
-            margin-bottom: 1rem; /* mb-4 */
-        }
-
-        .username {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 600; /* font-semibold */
-            color: #1f2937; /* text-gray-800 */
-        }
-
-        .user-tag {
-            color: #4b5563; /* text-gray-600 */
-        }
-
-        .link {
-            display: block;
-            border-radius: 0.375rem; /* rounded-md */
-            padding: 1rem; /* p-4 */
-            text-align: center;
-            transition-duration: 0.3s;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .link-facebook {
-            background-color: #3b82f6; /* bg-blue-500 */
-            color: #fff; /* text-white */
-        }
-        .link-facebook:hover {
-             background-color: #2563eb; /* hover:bg-blue-600 */
-        }
-
-        .link-twitter {
-            background-color: #38bdf8; /* bg-sky-400 */
-            color: #fff;
-        }
-
-        .link-twitter:hover {
-            background-color: #0ea5e9; /* hover:bg-sky-500 */
-        }
-
-        .link-instagram {
-            background-color: #ec4899; /* bg-pink-500 */
-            color: #fff;
-        }
-
-        .link-instagram:hover {
-            background-color: #d946ef; /* hover:bg-pink-600 */
-        }
-
-        .link-whatsapp {
-            background-color: #16a34a; /* bg-green-500 */
-            color: #fff;
-        }
-
-        .link-whatsapp:hover {
-            background-color: #15803d; /* hover:bg-green-600 */
-        }
-
-        .link-telegram {
-            background-color: #3b82f6; /* bg-blue-400 */
-            color: #fff;
-        }
-
-        .link-telegram:hover {
-            background-color: #2563eb; /* hover:bg-blue-500 */
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 1.5rem; /* mt-6 */
-            color: #6b7280; /* text-gray-500 */
-            font-size: 0.875rem; /* text-sm */
+            height: 200px; /* يمكنك تعديل الارتفاع حسب الحاجة */
         }
     </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen py-10">
-    <div class="container">
-        <div class="profile-image-container">
-            <img src="1.jpg" alt="صورة الملف الشخصي" class="profile-image">
+<body class="bg-white">
+
+    <header class="bg-primary text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-secondary">Book Bliss</h1>
+            <div class="flex items-center space-x-4">
+                <button id="cart-button" class="relative text-white hover:text-secondary transition duration-300">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-secondary text-primary text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
         </div>
-        <div class="username-container">
-            <h1 class="username">عمار ناصر</h1>
-            <p class="user-tag">@amarnasiir</p>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="books-section" class="mb-12">
+            <h2 class="text-2xl font-semibold text-primary mb-6">أحدث الكتب</h2>
+            <div id="book-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                </div>
+
+            <div class="text-center mt-8">
+                <button id="main-checkout-button" class="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary-dark transition duration-300 text-lg">
+                    <i class="fas fa-shopping-cart mr-2 rtl:ml-2"></i> الانتقال إلى السلة
+                </button>
+            </div>
+        </section>
+
+        <div id="cart-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden px-4">
+            <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center border-b pb-4 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">سلة التسوق</h3>
+                    <button id="close-cart-button" class="text-gray-600 hover:text-red-500 text-2xl">&times;</button>
+                </div>
+                <div id="cart-items" class="mb-4">
+                    <p id="empty-cart-message" class="text-gray-500 text-center">سلتك فارغة حالياً.</p>
+                </div>
+                <div id="cart-summary" class="border-t pt-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-lg font-semibold text-primary">الإجمالي:</span>
+                        <span id="cart-total" class="text-lg font-bold text-primary">0.00 SDG</span>
+                    </div>
+                    <div class="mb-4">
+                        <label for="city-select" class="block text-sm font-medium text-gray-700 mb-1">اختر مدينة التوصيل:</label>
+                        <select id="city-select" name="city" class="w-full p-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            <option value="">-- اختر المدينة --</option>
+                            <option value="portsudan">بورتسودان</option>
+                            <option value="atbara">عطبرة</option>
+                        </select>
+                        <p id="city-error" class="text-red-500 text-sm mt-1 hidden">الرجاء اختيار مدينة.</p>
+                    </div>
+                    <button id="checkout-button" class="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        إتمام الشراء عبر واتساب
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="space-y-4">
-            <a href="https://web.facebook.com/amarnasiir" target="_blank" rel="noopener noreferrer" class="link link-facebook">
-                فيسبوك
-            </a>
-            <a href="https://x.com/amarnasii" target="_blank" rel="noopener noreferrer" class="link link-twitter">
-                تويتر
-            </a>
-            <a href="https://www.instagram.com/amarnasiir/" target="_blank" rel="noopener noreferrer" class="link link-instagram">
-                انستغرام
-            </a>
-            <a href="https://wa.me/+249965811827" target="_blank" rel="noopener noreferrer" class="link link-whatsapp">
-                واتساب
-            </a>
-            <a href="https://t.me/Ammarnasiiir" target="_blank" rel="noopener noreferrer" class="link link-telegram">
-                تلجرام
-            </a>
+
+    </main>
+
+    <footer class="bg-gray-100 text-gray-700 py-6 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="current-year"></span> Book Bliss. كل الحقوق محفوظة.</p>
         </div>
-        <div class="footer">
-            <p>©2025 جميع الحقوق محفوظة.</p>
-        </div>
-    </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookList = document.getElementById('book-list');
+            const cartButton = document.getElementById('cart-button');
+            const mainCheckoutButton = document.getElementById('main-checkout-button');
+            const cartModal = document.getElementById('cart-modal');
+            const closeCartButton = document.getElementById('close-cart-button');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartCountElement = document.getElementById('cart-count');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            const checkoutButton = document.getElementById('checkout-button');
+            const citySelect = document.getElementById('city-select');
+            const cityError = document.getElementById('city-error');
+            const currentYearElement = document.getElementById('current-year');
+
+            // --- أرقام الواتساب ---
+            // !!! هام: استبدل الأرقام التالية بأرقام الواتساب الصحيحة لمدينتي بورتسودان وعطبرة
+            // تأكد من تضمين رمز البلد (مثلاً 249 للسودان) وبدون علامة + أو أصفار بادئة
+            const whatsappNumbers = {
+                portsudan: '249900079073', // استبدل XXXXXXXXX بالرقم الصحيح لبورتسودان
+                atbara: '249112009373'      // استبدل YYYYYYYYY بالرقم الصحيح لعطبرة
+            };
+            // ----------------------
+
+            // --- تحميل بيانات الكتب من ملف JSON ---
+            let books = [];
+            fetch('books.json')  // يفترض وجود ملف books.json في نفس المجلد
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    books = data;
+                    displayBooks(); // استدعاء عرض الكتب بعد جلب البيانات
+                })
+                .catch(error => {
+                    console.error("خطأ في جلب بيانات الكتب:", error);
+                    // يمكنك هنا عرض رسالة خطأ للمستخدم
+                    bookList.innerHTML = '<p class="text-center text-red-500 col-span-full">حدث خطأ أثناء تحميل الكتب. الرجاء المحاولة لاحقاً.</p>';
+                });
+            // ------------------------
+
+            // --- إدارة سلة التسوق ---
+            let cart = []; // { id, title, price, quantity }
+
+            function updateCartFromLocalStorage() {
+                const savedCart = localStorage.getItem('bookBlissCart');
+                if (savedCart) {
+                    cart = JSON.parse(savedCart);
+                }
+                updateCartDisplay();
+            }
+
+            function saveCartToLocalStorage() {
+                localStorage.setItem('bookBlissCart', JSON.stringify(cart));
+            }
+
+            function addToCart(bookId) {
+                const book = books.find(b => b.id === bookId);
+                if (!book) return;
+
+                const existingItem = cart.find(item => item.id === bookId);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ ...book, quantity: 1 });
+                }
+                saveCartToLocalStorage();
+                updateCartDisplay();
+                showCartNotification(book.title);
+            }
+
+            function removeFromCart(bookId) {
+                cart = cart.filter(item => item.id !== bookId);
+                saveCartToLocalStorage();
+                updateCartDisplay();
+            }
+
+            function updateQuantity(bookId, newQuantity) {
+                const quantity = parseInt(newQuantity, 10);
+                if (isNaN(quantity) || quantity < 1) {
+                    removeFromCart(bookId);
+                    return;
+                }
+                const cartItem = cart.find(item => item.id === bookId);
+                if (cartItem) {
+                    cartItem.quantity = quantity;
+                }
+                saveCartToLocalStorage();
+                updateCartDisplay();
+            }
+
+            function updateCartDisplay() {
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                let itemCount = 0;
+
+                if (cart.length === 0) {
+                    emptyCartMessage.classList.remove('hidden');
+                    checkoutButton.disabled = true;
+                    // تعطيل الزر الرئيسي أيضًا إذا كانت السلة فارغة (اختياري)
+                    // mainCheckoutButton.disabled = true;
+                    // mainCheckoutButton.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    emptyCartMessage.classList.add('hidden');
+                    checkoutButton.disabled = false;
+                    // تفعيل الزر الرئيسي (اختياري)
+                    // mainCheckoutButton.disabled = false;
+                    // mainCheckoutButton.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                    cart.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.classList.add('flex', 'justify-between', 'items-center', 'mb-3', 'pb-3', 'border-b', 'last:border-b-0');
+                        itemElement.innerHTML = `
+                            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                <img src="${item.image}" alt="${item.title}" class="w-12 h-12 object-cover rounded">
+                                <div>
+                                    <p class="font-medium text-sm">${item.title}</p>
+                                    <p class="text-xs text-gray-600">${item.price.toFixed(2)} SDG</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <input type="number" min="1" value="${item.quantity}" data-id="${item.id}" class="quantity-input w-12 text-center border rounded px-1 text-sm" aria-label="Quantity for ${item.title}">
+                                <button class="remove-item-button text-red-500 hover:text-red-700 text-sm" data-id="${item.id}" aria-label="Remove ${item.title}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        `;
+                        cartItemsContainer.appendChild(itemElement);
+                        total += item.price * item.quantity;
+                        itemCount += item.quantity;
+                    });
+
+                    cartItemsContainer.querySelectorAll('.quantity-input').forEach(input => {
+                        input.addEventListener('change', (e) => {
+                            const bookId = parseInt(e.target.getAttribute('data-id'));
+                            updateQuantity(bookId, e.target.value);
+                        });
+                        input.addEventListener('keypress', function(e) {
+                            if (e.key === 'Enter') {
+                                e.preventDefault();
+                            }
+                        });
+                    });
+                    cartItemsContainer.querySelectorAll('.remove-item-button').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const targetButton = e.target.closest('.remove-item-button');
+                            const bookId = parseInt(targetButton.getAttribute('data-id'));
+                            removeFromCart(bookId);
+                        });
+                    });
+                }
+
+                cartTotalElement.textContent = `${total.toFixed(2)} SDG`;
+                cartCountElement.textContent = itemCount;
+                cartCountElement.classList.toggle('hidden', itemCount === 0);
+            }
+
+            function showCartNotification(bookTitle) {
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-5 right-5 bg-green-500 text-white py-2 px-4 rounded-md shadow-lg z-50 transition-opacity duration-300';
+                notification.textContent = `تمت إضافة "${bookTitle}" إلى السلة!`;
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.classList.add('opacity-0');
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            }
+            // ------------------------
+
+            // --- عرض الكتب في الصفحة ---
+            function displayBooks() {
+                bookList.innerHTML = '';
+                if (!books || books.length === 0) {
+                    // تم تعديل الرسالة هنا
+                    bookList.innerHTML = '<p class="text-center text-gray-500 col-span-full">لا توجد كتب لعرضها حالياً.</p>';
+                    return;
+                }
+                books.forEach(book => {
+                    const bookElement = document.createElement('div');
+                    bookElement.classList.add('border', 'rounded-lg', 'shadow-sm', 'overflow-hidden', 'bg-white', 'flex', 'flex-col');
+                    bookElement.innerHTML = `
+                        <img src="${book.image}" alt="غلاف كتاب ${book.title}" class="book-image" onerror="this.onerror=null; this.src='https://placehold.co/300x200/cccccc/ffffff?text=Image+Not+Found';">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-lg font-semibold text-primary mb-2 flex-grow">${book.title}</h3>
+                            <p class="text-gray-700 mb-3 font-bold">${book.price.toFixed(2)} SDG</p>
+                            <button class="add-to-cart-button mt-auto w-full bg-secondary text-primary py-2 px-4 rounded-md hover:bg-secondary-dark transition duration-300" data-id="${book.id}">
+                                إضافة للسلة
+                            </button>
+                        </div>
+                    `;
+                    bookList.appendChild(bookElement);
+                });
+
+                document.querySelectorAll('.add-to-cart-button').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const bookId = parseInt(e.target.getAttribute('data-id'));
+                        addToCart(bookId);
+                    });
+                });
+            }
+            // ------------------------
+
+            // --- وظائف الواجهة (فتح/إغلاق السلة، الشراء) ---
+            function openCartModal() {
+                cartModal.classList.remove('hidden');
+                updateCartDisplay(); // تأكد من تحديث السلة عند فتحها
+            }
+
+            cartButton.addEventListener('click', openCartModal); // زر السلة في الهيدر
+            mainCheckoutButton.addEventListener('click', openCartModal); // الزر الجديد أسفل الكتب
+
+            closeCartButton.addEventListener('click', () => {
+                cartModal.classList.add('hidden');
+            });
+
+            cartModal.addEventListener('click', (e) => {
+                if (e.target === cartModal) {
+                    cartModal.classList.add('hidden');
+                }
+            });
+
+            checkoutButton.addEventListener('click', () => {
+                const selectedCity = citySelect.value;
+
+                if (!selectedCity) {
+                    cityError.classList.remove('hidden');
+                    citySelect.focus();
+                    return;
+                } else {
+                    cityError.classList.add('hidden');
+                }
+
+                if (!whatsappNumbers[selectedCity] || whatsappNumbers[selectedCity].includes('X') || whatsappNumbers[selectedCity].includes('Y')) {
+                    alert('عذراً، رقم الواتساب لهذه المدينة غير م configuré حالياً. الرجاء مراجعة مدير المتجر.');
+                    return;
+                }
+
+                // بناء رسالة الواتساب - تم تعديلها
+                let message = `طلب شراء من متجر Book Bliss:\n\n`;
+                let total = 0;
+                cart.forEach(item => {
+                    message += `- ${item.title} (الكمية: ${item.quantity}) - ${item.price.toFixed(2)} SDG\n`;
+                    total += item.price * item.quantity;
+                });
+                message += `\n*الإجمالي: ${total.toFixed(2)} SDG*\n`;
+                message += `*مدينة التوصيل: ${selectedCity === 'portsudan' ? 'بورتسودان' : 'عطبرة'}*\n`;
+                // تم إزالة عبارة بارك الله فيكم
+
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${whatsappNumbers[selectedCity]}?text=${encodedMessage}`;
+
+                window.open(whatsappUrl, '_blank');
+            });
+
+            citySelect.addEventListener('change', () => {
+                if (citySelect.value) {
+                    cityError.classList.add('hidden');
+                }
+            });
+
+            currentYearElement.textContent = new Date().getFullYear();
+            // ------------------------
+
+            // --- البدء ---
+            updateCartFromLocalStorage();
+            // ------------
+        });
+    </script>
 </body>
 </html>
